@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {ThirdwebProvider} from '@thirdweb-dev/react'
+import { StateProvider } from './Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThirdwebProvider activeChain="goerli">
+      < StateProvider>
+      <App />
+      
+      </StateProvider>
+    </ThirdwebProvider>
   </React.StrictMode>
 );
 
